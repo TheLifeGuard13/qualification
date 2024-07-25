@@ -8,6 +8,7 @@ class User(AbstractUser):
     """
     Модель Пользователя
     """
+
     username = None
     email = models.EmailField(unique=True, verbose_name="Почта")
     phone = models.CharField(max_length=35, **NULLABLE, verbose_name="Телефон")

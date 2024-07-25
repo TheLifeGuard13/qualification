@@ -9,8 +9,13 @@ class NetworkChain(models.Model):
     """
 
     name = models.CharField(max_length=150, verbose_name="Название")
-    supplier = models.ForeignKey('self', on_delete=models.CASCADE, **NULLABLE, verbose_name="Поставщик")
-    debt_amount = models.DecimalField(**NULLABLE, max_digits=30, decimal_places=2, verbose_name="Задолженность перед поставщиком")
+    supplier = models.ForeignKey("self", on_delete=models.CASCADE, **NULLABLE, verbose_name="Поставщик")
+    debt_amount = models.DecimalField(
+        **NULLABLE,
+        max_digits=30,
+        decimal_places=2,
+        verbose_name="Задолженность перед поставщиком",
+    )
     created = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
     def __str__(self) -> str:

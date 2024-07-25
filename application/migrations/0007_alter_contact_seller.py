@@ -7,13 +7,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('application', '0006_remove_networkchain_contacts_and_more'),
+        ("application", "0006_remove_networkchain_contacts_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='contact',
-            name='seller',
-            field=models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='application.networkchain', verbose_name='Продавец'),
+            model_name="contact",
+            name="seller",
+            field=models.OneToOneField(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="application.networkchain",
+                verbose_name="Продавец",
+            ),
         ),
     ]

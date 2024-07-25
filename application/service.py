@@ -1,10 +1,12 @@
+import typing
+
 import django_filters
 from django_filters.rest_framework import FilterSet
 
 from application.models import NetworkChain
 
 
-def clear_debt(modeladmin, request, queryset):
+def clear_debt(modeladmin: typing.Any, request: typing.Any, queryset: typing.Any) -> typing.Any:
     """
     Очищает задолженность выбранных поставщиков.
     """
@@ -16,7 +18,8 @@ class CountryFilter(FilterSet):
     """
     Фильтр по стране контакта.
     """
-    country = django_filters.CharFilter(field_name='contact__country', lookup_expr='icontains')
+
+    country = django_filters.CharFilter(field_name="contact__country", lookup_expr="icontains")
 
     class Meta:
         model = NetworkChain

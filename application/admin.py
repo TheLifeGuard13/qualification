@@ -12,9 +12,7 @@ class ProductAdmin(admin.ModelAdmin):
         "market_date",
         "seller",
     )
-    search_fields = (
-        "name",
-    )
+    search_fields = ("name",)
     list_filter = (
         "market_date",
         "seller",
@@ -31,9 +29,7 @@ class ContactAdmin(admin.ModelAdmin):
         "building",
         "seller",
     )
-    search_fields = (
-        "email",
-    )
+    search_fields = ("email",)
     list_filter = (
         "country",
         "city",

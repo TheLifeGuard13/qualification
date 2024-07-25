@@ -7,26 +7,38 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('application', '0005_networkchain_contacts_networkchain_products'),
+        ("application", "0005_networkchain_contacts_networkchain_products"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='networkchain',
-            name='contacts',
+            model_name="networkchain",
+            name="contacts",
         ),
         migrations.RemoveField(
-            model_name='networkchain',
-            name='products',
+            model_name="networkchain",
+            name="products",
         ),
         migrations.AddField(
-            model_name='contact',
-            name='seller',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='application.networkchain', verbose_name='Продавец'),
+            model_name="contact",
+            name="seller",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="application.networkchain",
+                verbose_name="Продавец",
+            ),
         ),
         migrations.AddField(
-            model_name='product',
-            name='seller',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='application.networkchain', verbose_name='Продавец'),
+            model_name="product",
+            name="seller",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="application.networkchain",
+                verbose_name="Продавец",
+            ),
         ),
     ]

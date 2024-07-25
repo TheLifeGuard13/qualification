@@ -15,4 +15,4 @@ contact_router = DefaultRouter()
 contact_router.register(r"contact", ContactViewSet, basename="contact")
 
 
-urlpatterns = ([] + network_router.urls + product_router.urls + contact_router.urls)
+urlpatterns = [] + network_router.urls + product_router.urls + contact_router.urls

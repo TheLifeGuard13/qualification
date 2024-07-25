@@ -8,40 +8,109 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Contact',
+            name="Contact",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('email', models.EmailField(max_length=50, verbose_name='Email')),
-                ('country', models.CharField(max_length=50, verbose_name='Страна')),
-                ('city', models.CharField(max_length=50, verbose_name='Город')),
-                ('street', models.CharField(blank=True, max_length=50, null=True, verbose_name='Улица')),
-                ('building', models.CharField(blank=True, max_length=50, null=True, verbose_name='Номер дома')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("email", models.EmailField(max_length=50, verbose_name="Email")),
+                ("country", models.CharField(max_length=50, verbose_name="Страна")),
+                ("city", models.CharField(max_length=50, verbose_name="Город")),
+                (
+                    "street",
+                    models.CharField(blank=True, max_length=50, null=True, verbose_name="Улица"),
+                ),
+                (
+                    "building",
+                    models.CharField(blank=True, max_length=50, null=True, verbose_name="Номер дома"),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150, verbose_name='Название')),
-                ('model', models.CharField(blank=True, max_length=30, null=True, verbose_name='Модель')),
-                ('market_date', models.DateField(verbose_name='Дата выхода на рынок')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150, verbose_name="Название")),
+                (
+                    "model",
+                    models.CharField(blank=True, max_length=30, null=True, verbose_name="Модель"),
+                ),
+                ("market_date", models.DateField(verbose_name="Дата выхода на рынок")),
             ],
         ),
         migrations.CreateModel(
-            name='NetworkChain',
+            name="NetworkChain",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150, verbose_name='Название')),
-                ('debt_amount', models.DecimalField(decimal_places=2, max_digits=30, verbose_name='Задолженность перед должником')),
-                ('created', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
-                ('contacts', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='application.contact', verbose_name='Контакты')),
-                ('supplier', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='application.networkchain', verbose_name='Поставщик')),
-                ('product', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='application.product', verbose_name='Продукты')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150, verbose_name="Название")),
+                (
+                    "debt_amount",
+                    models.DecimalField(
+                        decimal_places=2,
+                        max_digits=30,
+                        verbose_name="Задолженность перед должником",
+                    ),
+                ),
+                (
+                    "created",
+                    models.DateTimeField(auto_now_add=True, verbose_name="Дата создания"),
+                ),
+                (
+                    "contacts",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="application.contact",
+                        verbose_name="Контакты",
+                    ),
+                ),
+                (
+                    "supplier",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="application.networkchain",
+                        verbose_name="Поставщик",
+                    ),
+                ),
+                (
+                    "product",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="application.product",
+                        verbose_name="Продукты",
+                    ),
+                ),
             ],
         ),
     ]

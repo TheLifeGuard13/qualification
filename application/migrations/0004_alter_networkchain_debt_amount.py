@@ -6,13 +6,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('application', '0003_alter_networkchain_debt_amount'),
+        ("application", "0003_alter_networkchain_debt_amount"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='networkchain',
-            name='debt_amount',
-            field=models.DecimalField(blank=True, decimal_places=2, max_digits=30, null=True, verbose_name='Задолженность перед поставщиком'),
+            model_name="networkchain",
+            name="debt_amount",
+            field=models.DecimalField(
+                blank=True,
+                decimal_places=2,
+                max_digits=30,
+                null=True,
+                verbose_name="Задолженность перед поставщиком",
+            ),
         ),
     ]

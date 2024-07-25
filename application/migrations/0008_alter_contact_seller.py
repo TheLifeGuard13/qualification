@@ -7,13 +7,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('application', '0007_alter_contact_seller'),
+        ("application", "0007_alter_contact_seller"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='contact',
-            name='seller',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='application.networkchain', verbose_name='Продавец'),
+            model_name="contact",
+            name="seller",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="application.networkchain",
+                verbose_name="Продавец",
+            ),
         ),
     ]
